@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
         {
           // Add a new head
           // If snake hit the bottom wall, need to relocate on same column
-          if (snakePos.last + rowNum > squareTotalNum) {
+          if (snakePos.last + rowNum >= squareTotalNum) {
             snakePos.add(snakePos.last + rowNum - squareTotalNum);
           } else {
             snakePos.add(snakePos.last + rowNum);
@@ -240,7 +240,7 @@ class _HomePageState extends State<HomePage> {
           } else if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft) &&
               snakeCurrDir != SnakeDirection.right) {
             snakeCurrDir = SnakeDirection.left;
-          } else if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft) &&
+          } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight) &&
               snakeCurrDir != SnakeDirection.left) {
             snakeCurrDir = SnakeDirection.right;
           }
